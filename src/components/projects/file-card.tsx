@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import { FilePath, fileTypes } from '../../constants/file-types';
-import { PersssistFile } from '../../interfaces/MedIPFS-file.interface';
+import { MedIPFSFile } from '../../interfaces/MedIPFS-file.interface';
 import { bytesToSize, truncateName } from '../../utils/format';
 import { Card } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
@@ -9,7 +9,7 @@ import Meta from 'antd/lib/card/Meta';
 import { AppStorage } from '../../lib/storage';
 
 interface Props {
-	file: PersssistFile;
+	file: MedIPFSFile;
 }
 
 export const FileCard: NextPage<Props> = ({ file }) => {

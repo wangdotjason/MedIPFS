@@ -57,9 +57,9 @@ export const Header: NextPage<Props> = () => {
 	return (
 		<div className="align-center">
 			<div className='flex flex-col align-center text-center mt-10'>
-				<Title level={3}> Welcome to MedIPFS </Title>
+				<Title level={3}> MedIPFS </Title>
 				<Text type='secondary'>
-					Decentralized blockchain platform for uploading, downloading and sharing files without any restriction.
+					Decentralized blockchain platform for uploading, downloading and sharing medical lab reports.
 				</Text>
 				<div className='flex justify-center mt-5'>
 					<Button 
@@ -67,7 +67,7 @@ export const Header: NextPage<Props> = () => {
 						disabled={list.length === 0} 
 						icon={<UploadOutlined />} 
 						onClick={openModal}>
-							Share files
+							Upload Lab Report
 					</Button>
 				</div>
 			</div>

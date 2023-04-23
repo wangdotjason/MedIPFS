@@ -1,6 +1,6 @@
-const Persssist = artifacts.require("Persssist");
+const MedIPFS = artifacts.require("MedIPFS");
 
-contract(Persssist, accounts => {
+contract(MedIPFS, accounts => {
 
   let contractInstance;
   const notEmptyString = 'any';
@@ -10,7 +10,7 @@ contract(Persssist, accounts => {
   const emptyString = '';
 
   before(async () => {
-    this.contract = await Persssist.deployed()
+    this.contract = await MedIPFS.deployed()
   })
 
   it('deployed successfully', async () => {

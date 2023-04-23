@@ -1,12 +1,12 @@
 
 import { Col, Empty, Row } from 'antd';
 import { NextPage } from 'next'
-import { PersssistFile } from '../../interfaces/MedIPFS-file.interface';
+import { MedIPFSFile } from '../../interfaces/MedIPFS-file.interface';
 import { FileCard } from './file-card';
 
 
 interface Props {
-	files: PersssistFile[];
+	files: MedIPFSFile[];
 }
 
 export const Projects: NextPage<Props> = ({ files }) => {

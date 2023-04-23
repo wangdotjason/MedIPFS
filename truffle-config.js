@@ -31,19 +31,6 @@ module.exports = {
       port: 7545,
       network_id: "*" // Match any network id
     },
-    kovan: {
-      provider: () => {
-        const privateKey = process.env.PRIVATE_KEY;
-        return new HDWalletProvider(
-          privateKey,
-          `https://kovan.infura.io/v3/${infuraProjectId}`
-        )
-      },
-      from: accountAddr,
-      network_id: 42, // Kovan's id
-      networkCheckTimeoutnetworkCheckTimeout: 10000,
-      timeoutBlocks: 200,
-    },
     rinkeby: {
       provider: () => {
         const privateKey = process.env.PRIVATE_KEY;
@@ -61,10 +48,10 @@ module.exports = {
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    // reporter: 'eth-gas-reporter',
-    // reporterOptions: {
-    //   excludeContracts: ['Migrations']
-    // }
+    reporter: 'eth-gas-reporter',
+    reporterOptions: {
+      excludeContracts: ['Migrations']
+    }
   },
 
   test_directory: './src/test',

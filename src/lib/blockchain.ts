@@ -1,10 +1,10 @@
 // here we will handle the blockchain (Web3 library) functionality.
 
 import Web3 from "web3";
-import Persssist from '../../public/abis/MedIPFS.json'
+import MedIPFS from '../../public/abis/MedIPFS.json'
 import PersssistLocal from '../../abis/MedIPFS.json'
 import { NetwokIds } from "../constants/networks";
-import { PersssistFile } from "../interfaces/persssist-file.interface";
+import { MedIPFSFile } from "../interfaces/MedIPFS-file.interface";
 
 
 export class AppBlockchain {
@@ -39,10 +39,10 @@ export class AppBlockchain {
             .on('error', onError);
     }
 
-    async getFilesMetadata(): Promise<PersssistFile[]> {
+    async getFilesMetadata(): Promise<MedIPFSFile[]> {
         const methods = this.contract.methods;
         const filesCount = await methods.fileCount().call();
-        const filesMetadata: PersssistFile[] = [];
+        const filesMetadata: MedIPFSFile[] = [];
         for (var i = filesCount; i >= 1; i--) {
             const file = await methods.files(i).call()
             filesMetadata.push({
@@ -133,7 +133,7 @@ export class AppBlockchain {
             }
         } else {
             this.contract = new this.web3.eth.Contract(
-                (Persssist as any).abi,
+                (MedIPFS as any).abi,
                 process.env.NEXT_PUBLIC_CONTRACT
             );
             
