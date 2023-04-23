@@ -1,0 +1,39 @@
+name: Truffle Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup NodeJS 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+    - name: Show NodeJS version    
+      run: npm --version
+    
+    - name: Create env file
+      run: |
+        touch .env
+        echo INFURA_PROJECT_ID=${{ secrets.INFURA_PROJECT_ID }} >> .env
+        echo PRIVATE_KEY=${{ secrets.PRIVATE_KEY }} >> .env
+        echo ACCOUNT_ADDRESS=${{ secrets.ACCOUNT_ADDRESS }} >> .env
+        cat .env
+    
+    - name: Install Truffle
+      run: npm install truffle@5.4.29 -g # cannot use truffle@latest due to https://github.com/sc-forks/solidity-coverage/issues/696
+    
+    - name: Install Truffle Dependencies
+      run: npm install      
+    
+    - name: Run Truffle Test with CI=true for Codechecks  
+      run: truffle test --network rinkeby
