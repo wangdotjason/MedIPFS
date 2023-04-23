@@ -16,8 +16,8 @@ const Index: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Persssist</title>
-        <meta name="description" content="Desentralized storage for free and forever" />
+        <title>MedIPFS</title>
+        <meta name="description" content="Secure Lab Report Sharing" />
         <link rel="icon" href="favicon.ico" />
       </Head>
       <Provider store={store}>

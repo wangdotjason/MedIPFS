@@ -1,12 +1,7 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/MCarlomagno/persssist/main/public/images/banner.png" alt="banner image"/>
 </div>
 
-# Persssist
-
-[![Vercel](https://img.shields.io/github/deployments/mcarlomagno/persssist/production?label=vercel&logo=vercel&logoColor=white)](https://persssist.vercel.app/)
-![Tests](https://github.com/MCarlomagno/persssist/actions/workflows/truffle.yml/badge.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# MedIPFS
 
 Storage web application running on top of Rinkeby testnet that uses IPFS protocol for storing files in an open and decentralized way.
 
@@ -32,8 +27,6 @@ The **Smart Contract** role is to store basic information about the users and fi
 - [Mocha/Chai](https://mochajs.org/) for Smart Contract testing
 - [Tailwind CSS](https://tailwindcss.com/) for styling components.
 - [Ant UI](https://ant.design/) framework for prebuilt UI components.
-- [Github Actions](https://docs.github.com/en/actions) for CI and automated tests.
-- [Vercel](https://vercel.com/) for CD and Frontend hosting.
 
 #### Basic Process
 
