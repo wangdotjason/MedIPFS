@@ -57,7 +57,7 @@ export const Header: NextPage<Props> = () => {
 	return (
 		<div className="align-center">
 			<div className='flex flex-col align-center text-center mt-10'>
-				<Title level={3}> MedIPFS </Title>
+				<Title level={3}> MedIPFS Storage </Title>
 				<Text type='secondary'>
 					Decentralized blockchain platform for uploading, downloading and sharing medical lab reports.
 				</Text>

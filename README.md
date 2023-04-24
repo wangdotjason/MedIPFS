@@ -12,9 +12,6 @@ This is a dApp or decentralized application with a simple frontend connected wit
 
 The **Smart Contract** role is to store basic information about the users and files stored in the app. 
 
->  **IPFS** is a P2P API for storing files in a decentralized way, where each client work as a node for persisting files.
-> [Learn more](https://ipfs.io/)
-
 ![Alt text](./public/images/docs/diagram.svg)
 
 #### Stack
