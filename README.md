@@ -3,12 +3,12 @@
 
 # MedIPFS
 
-Storage web application running on top of Rinkeby testnet that uses IPFS protocol for storing files in an open and decentralized way.
+File sharing web application that uses IPFS protocol and Ethereum blockchain for decentralized file storage.
 
 ## How it works
 
 #### Architecture
-This is a dApp or decentralized application with a simple frontend connected with a set of backend services composed by a Smart Contract deployed to Rinkeby testnet and a storage service using IPFS.
+This is a dApp or decentralized application with a simple frontend connected with a set of backend services composed by a Smart Contract deployed to Ganache Ethereum testnet and a storage service using IPFS.
 
 The **Smart Contract** role is to store basic information about the users and files stored in the app. 
 
@@ -45,16 +45,7 @@ PRIVATE_KEY = <Your Infura private key>
 ACCOUNT_ADDRESS = <Your Account Address>
 ```
 
-Then, configure `.env.local` file for frontend application.
-
-
-```bash
-NEXT_PUBLIC_MODE = <PROD | DEV (depending of your environment)>
-NEXT_PUBLIC_CONTRACT = <Address of the smart contract>
-```
 #### Smart contract migration and deployment
-
-In case you want to run locally for development, run a local blockchain using Ganache.
 
 First, initialize truffle project on the repo.
 
@@ -62,18 +53,10 @@ First, initialize truffle project on the repo.
 truffle init
 ```
 
-Then migrate smart contracts to ganache or any other network (see `truffle-config.js` for configuring networks).
-
-In case you're running Ganache.
+Then migrate smart contracts to ganache.
 
 ```bash
 truffle migrate --network development
-```
-
-In case you prefer to debug against a deployed Smart Contract on rinkeby.
-
-```bash
-truffle migrate --network rinkeby
 ```
 
 #### Running frontend application
