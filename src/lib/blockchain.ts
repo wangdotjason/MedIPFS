@@ -1,8 +1,7 @@
 // here we will handle the blockchain (Web3 library) functionality.
 
 import Web3 from "web3";
-import MedIPFS from '../../public/abis/MedIPFS.json'
-import PersssistLocal from '../../abis/MedIPFS.json'
+import MedIPFSLocal from '../../abis/MedIPFS.json'
 import { NetwokIds } from "../constants/networks";
 import { MedIPFSFile } from "../interfaces/MedIPFS-file.interface";
 
@@ -46,7 +45,7 @@ export class AppBlockchain {
         for (var i = filesCount; i >= 1; i--) {
             const file = await methods.files(i).call()
             filesMetadata.push({
-                fileId: file.id, 
+                fileId  : file.id, 
                 fileName: file.fileName, 
                 filePath: file.filePath, 
                 fileSize: file.fileSize, 
@@ -100,43 +99,18 @@ export class AppBlockchain {
     }
 
     private async initializeContract(onError: (err: any) => void) {
-
         return this.initializeContractLocal().catch(onError);
-        
-        // if (process.env.NEXT_PUBLIC_MODE === 'DEV') {
-        //     return this.initializeContractLocal().catch(onError);
-        // }
-        // if (process.env.NEXT_PUBLIC_MODE === 'PROD') {
-        //     return this.initializeContractRemote().catch(onError);
-        // }
     }
 
     private async initializeContractLocal() {
         if(!this.web3) throw 'Web3 not initialized';
         const networkId = await this.web3.eth.net.getId();
-        const networkData = (PersssistLocal as any).networks[networkId];
+        const networkData = (MedIPFSLocal as any).networks[networkId];
         if (networkData) {
             this.contract = new this.web3.eth.Contract(
-                (PersssistLocal as any).abi,
+                (MedIPFSLocal as any).abi,
                 networkData.address
             )
-        }
-    }
-
-    private async initializeContractRemote() {
-        if(!this.web3) throw 'Web3 not initialized';
-        const networkId = await this.web3.eth.net.getId();
-        if(!this.supportedNetworks.includes(networkId)) {
-            throw {
-                title: 'Network not supported', 
-                msg: 'Please make sure to connect to the Rinkeby Network'
-            }
-        } else {
-            this.contract = new this.web3.eth.Contract(
-                (MedIPFS as any).abi,
-                process.env.NEXT_PUBLIC_CONTRACT
-            );
-            
         }
     }
 

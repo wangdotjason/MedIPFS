@@ -11,6 +11,10 @@ export const truncateName = (name: string) => {
     return name;
 } 
 
+export const showString = (str: string) => {
+    return str;
+}
+
 export const bytesToSize = (bytes: number) => {
     var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
     if (bytes == 0) return '0 Byte';

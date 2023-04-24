@@ -53,13 +53,13 @@ export class AppStorage {
     }
 
     private downloadURL(data: any, fileName: string) {
-        var a;
-        a = document.createElement('a');
-        a.href = data;
-        a.download = fileName;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
+        var fileCard;
+        fileCard = document.createElement('a');
+        fileCard.href = data;
+        fileCard.download = fileName;
+        document.body.appendChild(fileCard);
+        fileCard.click();
+        fileCard.remove();
     };
 
     listFiles() { }

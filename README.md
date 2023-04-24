@@ -24,7 +24,6 @@ The **Smart Contract** role is to store basic information about the users and fi
 - [Ganache](https://trufflesuite.com/ganache/index.html) as a local development blockchain.
 - [Metamask](https://metamask.io/) for in-browser user authentication.
 - [React.js](https://reactjs.org/) (Next.js Framework).
-- [Mocha/Chai](https://mochajs.org/) for Smart Contract testing
 - [Tailwind CSS](https://tailwindcss.com/) for styling components.
 - [Ant UI](https://ant.design/) framework for prebuilt UI components.
 

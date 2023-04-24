@@ -1,6 +1,6 @@
 
 export interface MedIPFSFile {
-    fileId: string;
+    fileId  : string;
     filePath: string;
     fileName: string;
     fileSize: string;
